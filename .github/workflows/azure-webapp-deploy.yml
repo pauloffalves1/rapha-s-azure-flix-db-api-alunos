@@ -38,7 +38,9 @@ jobs:
         run: npm run build
         env: 
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
-          run: echo "${{ secrets.VITE_API_URL }}"
+          run: |
+            npm run build
+            echo "$VITE_API_URL"
 
       - name: Stamp build info (debug)
         run: |
